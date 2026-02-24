@@ -1,0 +1,107 @@
+:root {
+    --color-accent: oklch(65% 50% 0); /* Primary accent color in OKLCH format */
+}
+
+body {
+	/* Set line height to 1.5 times the font size
+	   and use the OS’s UI font as the website font
+	 */
+	font: 100%/1.5 system-ui;
+	max-width: 75ch;
+	margin-inline: auto;
+	padding-inline: 1ch;
+	accent-color: var(--color-accent);
+}
+
+/* Style for the navigation bar */
+.nav {
+	display: flex;
+	color: rgb(63, 123, 63);
+	border-bottom-style: solid;
+
+}
+
+.nav a {
+	display: inline-block;
+	text-decoration: none;
+	color: rgb(63, 123, 63);
+	text-align: center;
+	padding: 1em;
+	margin-bottom: auto;
+	margin-inline: auto;
+
+}
+
+
+.nav a.currentsite {
+	font-weight: bold;
+	border-bottom-width: 0.5em;
+	border-bottom-style: solid;
+	padding-bottom: 0.5em;
+}
+
+
+.nav a:hover {
+	border-bottom-color: var(--color-accent);
+	background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+
+input,
+textarea,
+button {
+    font: inherit; /* Ensures form elements use the same font as the body */
+}
+/*
+
+label, input, textarea, button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+label { 
+    margin-block: 0.5rem;
+}
+*/
+.contact { /* I dont know if this is right */
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-column: 1 / -1;
+	gap: 1em;
+}
+
+img {
+	max-width: 50%;
+	height: auto;
+}
+
+.projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+}
+
+.projects a {
+	grid-template-rows: subgrid;
+	grid-row: span 3;
+	margin: 2em 0.5em;
+}
+
+
+h2 {
+  font-size: 1rem; /* adjust as needed */
+  line-height: 1.1;
+  text-wrap: balance; /* Enable balanced text wrapping */
+}
+
+.resume {
+	display: subgrid;
+	grid-template-columns: auto 1fr;
+	gap: 1em;
+	line-height: 0%;
+}
+
+.resume a {
+	grid-template-rows: subgrid;
+	grid-row: span 3;
+	margin: 2em 0.5em;
+}
