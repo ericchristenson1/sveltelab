@@ -80,13 +80,6 @@ img {
 	grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 }
 
-.projects a {
-	grid-template-rows: subgrid;
-	grid-row: span 3;
-	margin: 2em 0.5em;
-}
-
-
 h2 {
   font-size: 1rem; /* adjust as needed */
   line-height: 1.1;

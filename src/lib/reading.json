@@ -1,0 +1,21 @@
+[
+    {
+        "title": "The Counte of Monte Cristo",
+        "author": "Alexandre Dumas",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "opinion": "Amazing book, like a soap opera"
+    },
+    {
+        "title": "Everything Is Tuberculosis",
+        "author": "John Green",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "opinion": "Pretty good, very repetitive"
+    },
+    {
+        "title": "Barbarian Days: A Surfing Life",
+        "author": "William Finnegan",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "opinion": "Story of a well lived life"
+    }
+    
+]
