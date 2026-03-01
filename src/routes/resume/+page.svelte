@@ -1,13 +1,7 @@
 <svelte:head>
   <title>Resume</title>
 </svelte:head>
-    <nav class="nav">
-        <a href=".">Home</a>
-        <a href="projects">Projects</a>
-        <a href="contact">Contact</a>
-        <a class="currentsite" href="resume">Resume</a>
-        <a href="https://github.com/ericchristenson1" target="_blank">Github</a>
-    </nav>
+
     <h1>Resume</h1>
     <section>
         <h2>Education</h2>

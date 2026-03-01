@@ -5,14 +5,6 @@
   import readingList from "$lib/reading.json";
 </script>
 
-<nav class="nav">
-    <a class="currentsite" href=".">Home</a>
-    <a href="projects">Projects</a>
-    <a href="contact">Contact</a>
-    <a href="resume">Resume</a>
-    <a href="https://github.com/ericchristenson1" target="_blank">Github</a>
-</nav>
-
 <h1> Eric Christenson</h1>
 
 <p> This is my personal website, I will upload projects of all different forms here. I am adding more text so I can understand max width</p>
