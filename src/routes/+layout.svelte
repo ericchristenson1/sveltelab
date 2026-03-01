@@ -31,16 +31,23 @@ localStorage.colorScheme = colorScheme;
     </select>
 </label>
 <nav class="nav">
-    {#each pages as p}
-        <a href={base + p.url}
-        class:currentsite={p.url === "/" // is this link the home page?
-        ? $page.url.pathname === (base + "/") // if yes - set current = true if the path name matches. Else, set current = true if the path name starts correctly
-        : $page.url.pathname.startsWith(base + p.url)}
-        target={p.url.startsWith("http") ? "_blank": null}
-        >
-  {p.title}
-</a>
-    {/each}
+  {#each pages as p}
+    {@const isExternal = p.url.startsWith("http")}
+
+    <a
+      href={isExternal ? p.url : base + p.url}
+      target={isExternal ? "_blank" : null}
+      rel={isExternal ? "noopener noreferrer" : null}
+      class:currentsite={
+        !isExternal &&
+        (p.url === "/"
+          ? $page.url.pathname === (base + "/")
+          : $page.url.pathname.startsWith(base + p.url))
+      }
+    >
+      {p.title}
+    </a>
+  {/each}
 </nav>
 
 <style>
