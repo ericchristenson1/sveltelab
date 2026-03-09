@@ -51,14 +51,16 @@
 
 <p class="outro">Thanks for scrolling through my project story! Feel free to explore all of the projects at your leisure below.</p>
 
-    <h1>Projects I have worked on:</h1>
-    <!-- Navigation menu: -->
-    <h1>{projects.length} Projects</h1>
-    <div class="projects">
-        {#each projects as p}
-        <Project data={p} />
-        {/each}
-    </div>
+<h1>Projects I have worked on:</h1>
+<h1>{projects.length} Projects</h1>
+<div class="projects">
+  {#each projects as p}
+    <Project data={{
+      ...p,
+      image: p.image.startsWith('/') ? `${base}${p.image}` : p.image
+    }} />
+  {/each}
+</div>
 
 <style>
   .scrolly-wrapper {
