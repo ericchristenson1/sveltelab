@@ -38,7 +38,9 @@
       <div class="project-detail">
         <h3>{sorted_projects[activeProjectIdx].year}</h3>
         <img
-          src={base}{sorted_projects[activeProjectIdx].image}
+          src={sorted_projects[activeProjectIdx].image.startsWith('/')
+          ? `${base}${sorted_projects[activeProjectIdx].image}`
+          : sorted_projects[activeProjectIdx].image}
           alt="Preview of {sorted_projects[activeProjectIdx].title}"
           style="width: 100%;"
         />
