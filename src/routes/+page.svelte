@@ -1,8 +1,29 @@
 <script>
-  import projects from "$lib/projects.json";
-  import Project from "$lib/Project.svelte";
-  import ReadingItem from "$lib/ReadingItem.svelte";
-  import readingList from "$lib/reading.json";
+    import projects from "$lib/projects.json";
+    import Project from "$lib/Project.svelte";
+    import ReadingItem from "$lib/ReadingItem.svelte";
+    import readingList from "$lib/reading.json";
+    import { onMount } from "svelte";
+
+    let githubData = null;
+    let loading = true;
+    let error = null;
+
+
+
+
+    onMount(async () => {
+        try {
+            console.log("Page has been mounted!")
+            let response = await fetch("https://api.github.com/users/ericchristenson1");
+            console.log(response);
+            githubData = await response.json();
+            console.log(githubData);
+        } catch (err) {
+            error = err;
+        }
+        loading = false;
+    });
 </script>
 
 <h1> Eric Christenson</h1>
@@ -13,12 +34,22 @@
     alt="Glass vase made with white and blue cane. Next to it is a cup made of the same cane."
     width="300" height="400">
 
-    <h3>Recent Projects</h3>
-    <div class="projects highlights">
-        {#each projects.slice(0, 3) as p}
-        <Project data={p} />
-        {/each}
-    </div>
+{#if loading}
+    <p>Loading...</p>
+{:else if error}
+    <p>Something went wrong: {error.message}</p>
+{:else}
+    <h3>Github Stats</h3>
+    <p>Followers: {githubData.followers}</p>
+    <p>Public Repos: {githubData.public_repos}</p>
+{/if}
+
+<h3>Recent Projects</h3>
+<div class="projects highlights">
+    {#each projects.slice(0, 3) as p}
+    <Project data={p} />
+    {/each}
+</div>
 
 <h3>Reading List</h3>
 <div class="projects highlights">

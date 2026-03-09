@@ -1,63 +1,65 @@
 [
-
-	{
-		"title": "Lorem ipsum dolor sit.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
-	},
-	{
-		"title": "Architecto minima sed omnis?",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Est, reiciendis aspernatur debitis maxime et itaque animi sit quod quo, tempore incidunt tempora dignissimos exercitationem enim numquam quam quaerat optio laborum ut unde hic delectus laboriosam? Quasi, cupiditate corporis."
-	},
-	{
-		"title": "Asperiores rem repellendus doloremque.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Eligendi tenetur quae quos recusandae est. Cumque, voluptatem. Quo nihil dignissimos molestiae explicabo praesentium aspernatur debitis, illo rerum possimus quam ducimus earum nulla officiis maiores itaque repellat corporis soluta labore?"
-	},
-	{
-		"title": "Laudantium reprehenderit placeat perspiciatis.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Quo minus perferendis nulla corrupti repellat dolorem dolore assumenda sit minima ducimus quidem ullam, id ipsa dicta tempora laborum officiis unde possimus cumque nobis alias inventore! Ullam repudiandae iusto nam."
-	},
-	{
-		"title": "Consequuntur autem eos facere.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Laborum alias ea unde harum aspernatur? Molestiae, veritatis, possimus, numquam ex excepturi quod ducimus sit odit optio quibusdam sequi aliquid itaque tempore perspiciatis placeat expedita vero voluptates. Sit, aspernatur sint!"
-	},
-	{
-		"title": "Quos sint quaerat omnis?",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Est neque, velit nam rerum error odio voluptates voluptatem magnam laboriosam ad? Doloribus, id et itaque unde porro totam ullam quaerat blanditiis odit animi eveniet aut, voluptate velit iure odio."
-	},
-	{
-		"title": "Iste ipsam magni fuga!",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Velit omnis suscipit nemo quia? Iste maiores numquam labore quia nemo eveniet odit, modi magnam? Architecto officia sint est. Architecto iste minima consequuntur explicabo illo error sed at dolore nostrum!"
-	},
-	{
-		"title": "Ipsum, aperiam magni? Nobis.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Delectus magni, vel, quod mollitia hic rem temporibus, sint doloribus tenetur qui dolores tempore quisquam fuga nobis recusandae molestiae ipsum nostrum maxime eaque dicta aperiam eum quas beatae. At, neque."
-	},
-	{
-		"title": "Dicta nihil odit illo?",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Vitae quos laudantium officiis rerum, accusamus delectus aspernatur quas nulla, magni sed, excepturi saepe incidunt laboriosam alias at aliquam atque quisquam autem nesciunt. Minus, reprehenderit odit nam illo natus aspernatur?"
-	},
-	{
-		"title": "Vel earum nulla facilis.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Aut voluptatem sint atque corrupti accusamus necessitatibus possimus et, itaque nulla id deleniti nemo repellendus asperiores molestias laudantium, mollitia ad dicta. Laboriosam, itaque. Quos corporis, perferendis natus officiis beatae qui."
-	},
-	{
-		"title": "Nobis iste neque quaerat.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Quos, recusandae, sit rerum velit nostrum nihil quisquam tempora repellat sed quibusdam facilis. Assumenda quaerat ab, nesciunt odio facere sit, ipsa necessitatibus tempora, maiores commodi sed quae provident deserunt at?"
-	},
-	{
-		"title": "Iusto, incidunt. Totam, illum.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Tempore, eveniet minus velit, earum aperiam necessitatibus repellendus provident accusamus illum officiis doloribus, eum saepe est aut numquam distinctio pariatur natus totam repellat. Numquam nulla libero sapiente magnam nostrum ex."
-	}
+  {
+    "title": "Data Visualization - Exploratory Data Visualization",
+    "year": 2026,
+    "image": "https://raw.githubusercontent.com/ericchristenson1/DataVis/refs/heads/main/A2/Images/bubblenoninvbuys.png",
+    "description": "A data visualization class assignment exploring visual encoding techniques and interactive charts. Built with HTML and deployed via GitHub Pages as part of a data vis course.",
+    "story": "Using a Boston property sales dataset, I investigated speculation and housing investment trends across the city. I uncovered that non-investors are buying a shrinking share of residential properties over time — with the steepest decline after the Great Recession — and that most home flipping is done by non-investors, who take the property off the market for 1–2 years per flip. I also caught a likely data error where institutional property units near 160 Federal St were each priced at $130M, skewing aggregate metrics significantly."
+  },
+  {
+    "title": "Data Visualization - Visualization Redesign",
+    "year": 2026,
+    "image": "https://raw.githubusercontent.com/ericchristenson1/DataVis/refs/heads/main/A3/Images/Final.png",
+    "description": "A critique and redesign of a NYT COVID spiral chart, replacing it with a more legible and emotionally resonant visualization of the Omicron surge.",
+    "story": "Starting from a NYT COVID spiral chart published during Omicron, I critiqued how the snail-shell format obscured exponential scale and diluted urgency. My redesign split 2021 and 2022 case data into side-by-side Gantt-style bars, added projected January cases, and saturated the red color encoding to drive emotional weight. The result made the looming surge immediately legible — something the original only implied."
+  },
+  {
+    "title": "Data Visualization - Persuasive and Deceptive Visualization",
+    "year": 2026,
+    "image": "https://raw.githubusercontent.com/ericchristenson1/DataVis/refs/heads/main/A4/Images/export.png",
+    "description": "Using the same abortion access dataset, I built two opposing visualizations to argue for and against the same proposition — exploring the line between persuasion and deception.",
+    "story": "The proposition: abortion restrictions don't reduce abortions, they just export them. Using identical data, I built one map showing interstate abortion flows with stark binary colors to support the claim, and a bar chart using aggregate counts (hiding the delta) to argue against it. The exercise revealed that the most powerful design lever wasn't color or layout — it was choosing between showing differences versus totals."
+  },
+  {
+    "title": "Cooling Data Centers",
+    "year": 2025,
+    "image": "/images/alabnoaxis.png",
+    "description": "Worked with Schneider Electric to optimize data center cooling performance. Used monte carlo sampling, causal inference, and reinforcement learning techniques.",
+    "story": "As part of MIT's Analytics Lab, my team partnered with Schneider Electric to reduce cooling failures across their 55,000-device fleet. I applied Mean-Seasonal-Trend decomposition to flag extreme weather events, used Causal Forest models to estimate their impact on cooling performance, and built a reinforcement learning system to predict GPU overheating before it occurred. The work projected $100k in incremental ARR by making cooling operations interpretable enough to sell as a monitoring product."
+  },
+  {
+    "title": "Portfolio Website",
+    "year": 2025,
+    "image": "/images/svelte.png",
+    "description": "A personal portfolio site built with HTML to showcase project work. Hosted on GitHub Pages as a central hub for displaying completed projects and skills.",
+    "story": "Built from scratch in HTML and deployed on GitHub Pages, this site consolidates projects spanning energy markets, machine learning, optimization, and data visualization. It doubles as a live resume — updated alongside coursework at MIT and professional work in battery trading."
+  },
+  {
+    "title": "ERCOT Peaker Project",
+    "year": 2025,
+    "image": "/images/opti_results.png",
+    "description": "A machine learning project analyzing ERCOT (Electric Reliability Council of Texas) power grid data to identify and model peaker plant behavior using optimization and machine learning.",
+    "story": "Drawing on two summers operating grid-scale batteries at Key Capture Energy in Texas, I built three price forecast models for the ERCOT market in Python and Julia. Each forecast fed into an optimization model simulating generator dispatch decisions, allowing downstream comparison of how forecast quality affects operational revenue — bridging the gap between ML accuracy metrics and real trading outcomes."
+  },
+  {
+    "title": "Deep Learning Pricing Estimator",
+    "year": 2025,
+    "image": "/images/global_parity.png",
+    "description": "A project exploring multimodal deep learning models. Estimate prices of goods based off a picture and text, primarily relying on Amazon Data.",
+    "story": "Built for MIT's Deep Learning course, this model predicts product prices by combining image features from product photos with text from listing descriptions. The core question was whether visual information adds meaningful signal beyond what text alone provides — testing multimodal fusion architectures against single-modality baselines on Amazon product data."
+  },
+  {
+    "title": "CatanPlacement",
+    "year": 2025,
+    "image": "/images/Figure_1.png",
+    "description": "A Python project that calculates optimal starting placement strategies for the board game Settlers of Catan, using game theory assumptions and pruning for speed.",
+    "story": "Inspired by MIT's Optimization course, I framed Catan settlement placement as a dynamic programming problem. The solver evaluates resource probability distributions across board configurations and uses branch pruning to keep it fast — finding placements that maximize expected resource diversity under the constraint that your opponent is also playing optimally."
+  },
+  {
+    "title": "Optimization Practice",
+    "year": 2025,
+    "image": "/images/optimization.svg",
+    "description": "A repository for practicing mathematical and computational optimization techniques, including algorithms and methods applied to real-world problems.",
+    "story": "A personal sandbox for working through optimization problems in Python and Gurobi, built alongside MIT's Optimization coursework. Problems range from linear and integer programming to more applied formulations — a place to keep implementations and notes from the coursework that most directly connects to my work in energy markets."
+  }
 ]
