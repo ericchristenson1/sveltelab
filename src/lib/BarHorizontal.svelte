@@ -2,10 +2,11 @@
     import * as d3 from 'd3';
 
     export let data = [];
+    export let title = "Website Breakdown";
 
-    let width = 500;
-    let height = 300;
-    let margin = { top: 40, right: 160, bottom: 50, left: 80 };
+    let width = 400;
+    let height = 250;
+    let margin = { top: 30, right: 140, bottom: 40, left: 70 };
     let innerWidth  = width  - margin.left - margin.right;
     let innerHeight = height - margin.top  - margin.bottom;
 
@@ -26,7 +27,9 @@
     let xAxis, yAxis;
 
     $: if (xAxis && yAxis) {
-        d3.select(xAxis).call(d3.axisBottom(xScale));
+        d3.select(xAxis).call(
+            d3.axisBottom(xScale).ticks(Math.min(d3.max(data, d => d.value) || 10, 10))
+        );
         d3.select(yAxis).call(d3.axisLeft(yScale));
     }
 </script>
@@ -39,7 +42,7 @@
             y={margin.top / 2}
             text-anchor="middle"
             class="chart-title">
-            Lines of Code by Language
+            {title}
         </text>
 
         <!-- x-axis -->
@@ -73,18 +76,11 @@
                     stroke="currentColor"
                     stroke-width="2"
                 />
-                <line
-                    x1={xScale(maxBar.value)}
-                    y1={yScale(maxBar.label) + yScale.bandwidth() / 2}
-                    x2={xScale(maxBar.value) + 30}
-                    y2={yScale(maxBar.label) + yScale.bandwidth() / 2}
-                    stroke="currentColor"
-                    stroke-width="1"
-                />
                 <text
-                    x={xScale(maxBar.value) + 35}
+                    x={xScale(maxBar.value) + 5}
                     y={yScale(maxBar.label) + yScale.bandwidth() / 2}
                     dominant-baseline="middle"
+                    text-anchor="start"
                     class="annotation">
                     Most lines
                 </text>
@@ -128,43 +124,44 @@
         overflow: visible;
     }
     .container {
-        max-width: 700px;
+        max-width: 600px;
         margin: 0 auto;
         display: flex;
         align-items: flex-start;
-        gap: 1.5em;
+        gap: 1em;
     }
     .legend {
         list-style: none;
         padding: 0;
-        margin: 1em 0 0;
+        margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.5em;
+        gap: 0.3em;
+        font-size: 0.8em;
     }
     .swatch {
         background: var(--color);
-        width: 1em;
-        height: 1em;
+        width: 0.8em;
+        height: 0.8em;
         border-radius: 2px;
         flex-shrink: 0;
     }
     li {
         display: flex;
         align-items: center;
-        gap: 0.5em;
+        gap: 0.4em;
     }
     .chart-title {
-        font-size: 1em;
+        font-size: 0.85em;
         font-weight: bold;
         fill: currentColor;
     }
     .axis-label {
-        font-size: 0.8em;
+        font-size: 0.7em;
         fill: currentColor;
     }
     .annotation {
-        font-size: 0.7em;
+        font-size: 0.6em;
         fill: currentColor;
         font-style: italic;
     }
