@@ -3,6 +3,7 @@
     import { onMount } from 'svelte';
     import * as d3 from 'd3';
     import BarHorizontal from '$lib/BarHorizontal.svelte';
+    import LineChart from '$lib/LineChart.svelte';
     import {
         computePosition,
         autoPlacement,
@@ -13,12 +14,19 @@
     let commits = [];
     let barData = [];
     let clickedCommits = [];
+    let linesByDate = [];
 
     // Tooltip state
     let hoveredIndex = -1;
     $: hoveredCommit = commits[hoveredIndex] ?? {};
     let commitTooltip;
     let tooltipPosition = {x: 0, y: 0};
+
+    // Brushing state
+    let svg;
+    let brushSelection = null;
+    $: brushedCommits = brushSelection ? commits.filter(isCommitBrushed) : [];
+    $: selectedCommits = Array.from(new Set([...clickedCommits, ...brushedCommits]));
 
     // Layout dimensions
     let width = 928;
@@ -88,6 +96,32 @@
         }
     }
 
+    function isCommitBrushed(commit) {
+        if (!brushSelection) {
+            return false;
+        }
+        const x = xScale(commit.datetime);
+        const y = yScale(commit.hourFrac);
+        const [[x0, y0], [x1, y1]] = brushSelection;
+        return x >= x0 && x <= x1 && y >= y0 && y <= y1;
+    }
+
+    function brushed(evt) {
+        brushSelection = evt.selection;
+    }
+
+    // Setup the brush
+    $: {
+        if (svg) {
+            d3.select(svg).call(
+                d3.brush()
+                    .extent([[usableArea.left, usableArea.top], [usableArea.right, usableArea.bottom]])
+                    .on("start brush end", brushed)
+            );
+            d3.select(svg).selectAll(".dots, .overlay ~ *").raise();
+        }
+    }
+
     onMount(async () => {
         locData = await d3.csv(`${base}/loc.csv`, row => ({
             ...row,
@@ -118,13 +152,31 @@
 
         barData = d3.rollups(locData, v => v.length, d => d.type)
             .map(([lang, count]) => ({ label: lang, value: count }));
+
+        // Data wrangling for line chart (Step 2.1)
+        // Get count of edits for each date
+        const rolled = d3.rollups(
+            locData,
+            v => v.length,
+            d => d3.timeDay.floor(d.date)
+        ).map(([date, count]) => ({ date, count }));
+
+        // Get all days between min and max dates
+        const [minDate, maxDate] = d3.extent(rolled, d => d.date);
+        const allDays = d3.timeDays(minDate, d3.timeDay.offset(maxDate, 1));
+
+        // Fill in missing dates with 0 count
+        linesByDate = allDays.map(date => ({
+            date,
+            count: rolled.find(d => d.date.getTime() === date.getTime())?.count ?? 0
+        }));
     });
 
     // Prepare filtered bar data (Step 5.1)
     $: {
         // Get lines from selected commits or all lines
-        let selectedLines = clickedCommits.length > 0 
-            ? clickedCommits.flatMap(c => c.lines)
+        let selectedLines = selectedCommits.length > 0 
+            ? selectedCommits.flatMap(c => c.lines)
             : locData;
         
         // Count lines by language
@@ -169,7 +221,7 @@
 <p>Meta page to visualize project data.</p>
 
 <div class="scatterplot">
-    <svg {width} {height} viewBox="0 0 {width} {height}" overflow="visible">
+    <svg {width} {height} viewBox="0 0 {width} {height}" overflow="visible" bind:this={svg} on:mouseleave={() => hoveredIndex = -1} role="img" aria-label="Scatter plot of commits over time">
         <!-- Grid lines -->
         <g class="gridlines" transform="translate({usableArea.left}, 0)" bind:this={yAxisGridlines} />
 
@@ -180,7 +232,7 @@
                 <circle
                     role="button"
                     tabindex="0"
-                    class:selected={clickedCommits.includes(commit)}
+                    class:selected={selectedCommits.includes(commit)}
                     cx={xScale(commit.datetime)}
                     cy={yScale(commit.hourFrac)}
                     r={rScale(commit.totalLines)}
@@ -221,7 +273,9 @@
     <dd>{hoveredCommit.totalLines}</dd>
 </dl>
 
-<BarHorizontal data={barData} title={clickedCommits.length > 0 ? "Selected Commits" : "Website Breakdown"} />
+<BarHorizontal data={barData} title={selectedCommits.length > 0 ? `Lines of Code: ${selectedCommits.length} Selected Commits` : "Website Breakdown"} />
+
+<LineChart data={linesByDate} />
 
 <style>
     .scatterplot {
@@ -230,6 +284,20 @@
 
     .gridlines {
         stroke-opacity: 0.2;
+    }
+
+    @keyframes marching-ants {
+        to {
+            stroke-dashoffset: -8;
+        }
+    }
+
+    svg :global(.selection) {
+        fill-opacity: 10%;
+        stroke: black;
+        stroke-opacity: 70%;
+        stroke-dasharray: 5 3;
+        animation: marching-ants 2s linear infinite;
     }
 
     circle {
