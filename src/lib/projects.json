@@ -1,65 +1,82 @@
 [
   {
+    "title": "Geospatial Visualization - Boston Bikemap",
+    "year": 2026,
+    "image": "/images/bikemap.png",
+    "description": "An interactive geospatial visualization revealing bike traffic patterns across Boston and Cambridge. Built with Svelte, Mapbox, and D3, this project displays BlueBike station demand with dynamic filtering by time of day, traffic flow visualization, and isochrone analysis.",
+    "story": "Using 260,000+ BlueBike trips from March 2024, I built an interactive map revealing how bike traffic flows between Boston and Cambridge throughout the day. The visualization encodes station demand as circle size, traffic direction (departures vs arrivals) as color, and allows time-based filtering to see how patterns shift morning (downtown arrivals) vs evening (downtown departures). Adding isochrones shows reachable areas within 5-20 minutes of cycling — a key metric for urban mobility planning.",
+    "url": "https://ericchristenson1.github.io/GeospatialVis/"
+  },
+  {
     "title": "Data Visualization - Exploratory Data Visualization",
     "year": 2026,
     "image": "https://raw.githubusercontent.com/ericchristenson1/DataVis/refs/heads/main/A2/Images/bubblenoninvbuys.png",
     "description": "A data visualization class assignment exploring visual encoding techniques and interactive charts. Built with HTML and deployed via GitHub Pages as part of a data vis course.",
-    "story": "Using a Boston property sales dataset, I investigated speculation and housing investment trends across the city. I uncovered that non-investors are buying a shrinking share of residential properties over time — with the steepest decline after the Great Recession — and that most home flipping is done by non-investors, who take the property off the market for 1–2 years per flip. I also caught a likely data error where institutional property units near 160 Federal St were each priced at $130M, skewing aggregate metrics significantly."
+    "story": "Using a Boston property sales dataset, I investigated speculation and housing investment trends across the city. I uncovered that non-investors are buying a shrinking share of residential properties over time — with the steepest decline after the Great Recession — and that most home flipping is done by non-investors, who take the property off the market for 1–2 years per flip. I also caught a likely data error where institutional property units near 160 Federal St were each priced at $130M, skewing aggregate metrics significantly.",
+    "url": "https://ericchristenson1.github.io/DataVis/"
   },
   {
     "title": "Data Visualization - Visualization Redesign",
     "year": 2026,
     "image": "https://raw.githubusercontent.com/ericchristenson1/DataVis/refs/heads/main/A3/Images/Final.png",
     "description": "A critique and redesign of a NYT COVID spiral chart, replacing it with a more legible and emotionally resonant visualization of the Omicron surge.",
-    "story": "Starting from a NYT COVID spiral chart published during Omicron, I critiqued how the snail-shell format obscured exponential scale and diluted urgency. My redesign split 2021 and 2022 case data into side-by-side Gantt-style bars, added projected January cases, and saturated the red color encoding to drive emotional weight. The result made the looming surge immediately legible — something the original only implied."
+    "story": "Starting from a NYT COVID spiral chart published during Omicron, I critiqued how the snail-shell format obscured exponential scale and diluted urgency. My redesign split 2021 and 2022 case data into side-by-side Gantt-style bars, added projected January cases, and saturated the red color encoding to drive emotional weight. The result made the looming surge immediately legible — something the original only implied.",
+    "url": "https://ericchristenson1.github.io/DataVis/"
   },
   {
     "title": "Data Visualization - Persuasive and Deceptive Visualization",
     "year": 2026,
     "image": "https://raw.githubusercontent.com/ericchristenson1/DataVis/refs/heads/main/A4/Images/export.png",
     "description": "Using the same abortion access dataset, I built two opposing visualizations to argue for and against the same proposition — exploring the line between persuasion and deception.",
-    "story": "The proposition: abortion restrictions don't reduce abortions, they just export them. Using identical data, I built one map showing interstate abortion flows with stark binary colors to support the claim, and a bar chart using aggregate counts (hiding the delta) to argue against it. The exercise revealed that the most powerful design lever wasn't color or layout — it was choosing between showing differences versus totals."
+    "story": "The proposition: abortion restrictions don't reduce abortions, they just export them. Using identical data, I built one map showing interstate abortion flows with stark binary colors to support the claim, and a bar chart using aggregate counts (hiding the delta) to argue against it. The exercise revealed that the most powerful design lever wasn't color or layout — it was choosing between showing differences versus totals.",
+    "url": "https://ericchristenson1.github.io/DataVis/"
   },
   {
     "title": "Cooling Data Centers",
     "year": 2025,
     "image": "/images/alabnoaxis.png",
     "description": "Worked with Schneider Electric to optimize data center cooling performance. Used monte carlo sampling, causal inference, and reinforcement learning techniques.",
-    "story": "As part of MIT's Analytics Lab, my team partnered with Schneider Electric to reduce cooling failures across their 55,000-device fleet. I applied Mean-Seasonal-Trend decomposition to flag extreme weather events, used Causal Forest models to estimate their impact on cooling performance, and built a reinforcement learning system to predict GPU overheating before it occurred. The work projected $100k in incremental ARR by making cooling operations interpretable enough to sell as a monitoring product."
+    "story": "As part of MIT's Analytics Lab, my team partnered with Schneider Electric to reduce cooling failures across their 55,000-device fleet. I applied Mean-Seasonal-Trend decomposition to flag extreme weather events, used Causal Forest models to estimate their impact on cooling performance, and built a reinforcement learning system to predict GPU overheating before it occurred. The work projected $100k in incremental ARR by making cooling operations interpretable enough to sell as a monitoring product.",
+    "url": "https://github.com/ericchristenson1/analytics-lab"
   },
   {
     "title": "Portfolio Website",
     "year": 2025,
     "image": "/images/svelte.png",
     "description": "A personal portfolio site built with HTML to showcase project work. Hosted on GitHub Pages as a central hub for displaying completed projects and skills.",
-    "story": "Built from scratch in HTML and deployed on GitHub Pages, this site consolidates projects spanning energy markets, machine learning, optimization, and data visualization. It doubles as a live resume — updated alongside coursework at MIT and professional work in battery trading."
+    "story": "Built from scratch in HTML and deployed on GitHub Pages, this site consolidates projects spanning energy markets, machine learning, optimization, and data visualization. It doubles as a live resume — updated alongside coursework at MIT and professional work in battery trading.",
+    "url": "https://ericchristenson1.github.io/sveltelab/"
   },
   {
     "title": "ERCOT Peaker Project",
     "year": 2025,
     "image": "/images/opti_results.png",
     "description": "A machine learning project analyzing ERCOT (Electric Reliability Council of Texas) power grid data to identify and model peaker plant behavior using optimization and machine learning.",
-    "story": "Drawing on two summers operating grid-scale batteries at Key Capture Energy in Texas, I built three price forecast models for the ERCOT market in Python and Julia. Each forecast fed into an optimization model simulating generator dispatch decisions, allowing downstream comparison of how forecast quality affects operational revenue — bridging the gap between ML accuracy metrics and real trading outcomes."
+    "story": "Drawing on two summers operating grid-scale batteries at Key Capture Energy in Texas, I built three price forecast models for the ERCOT market in Python and Julia. Each forecast fed into an optimization model simulating generator dispatch decisions, allowing downstream comparison of how forecast quality affects operational revenue — bridging the gap between ML accuracy metrics and real trading outcomes.",
+    "url": "https://github.com/ericchristenson1/ercot-peaker"
   },
   {
     "title": "Deep Learning Pricing Estimator",
     "year": 2025,
     "image": "/images/global_parity.png",
     "description": "A project exploring multimodal deep learning models. Estimate prices of goods based off a picture and text, primarily relying on Amazon Data.",
-    "story": "Built for MIT's Deep Learning course, this model predicts product prices by combining image features from product photos with text from listing descriptions. The core question was whether visual information adds meaningful signal beyond what text alone provides — testing multimodal fusion architectures against single-modality baselines on Amazon product data."
+    "story": "Built for MIT's Deep Learning course, this model predicts product prices by combining image features from product photos with text from listing descriptions. The core question was whether visual information adds meaningful signal beyond what text alone provides — testing multimodal fusion architectures against single-modality baselines on Amazon product data.",
+    "url": "https://github.com/ericchristenson1/deep-learning-pricing"
   },
   {
     "title": "CatanPlacement",
     "year": 2025,
     "image": "/images/Figure_1.png",
     "description": "A Python project that calculates optimal starting placement strategies for the board game Settlers of Catan, using game theory assumptions and pruning for speed.",
-    "story": "Inspired by MIT's Optimization course, I framed Catan settlement placement as a dynamic programming problem. The solver evaluates resource probability distributions across board configurations and uses branch pruning to keep it fast — finding placements that maximize expected resource diversity under the constraint that your opponent is also playing optimally."
+    "story": "Inspired by MIT's Optimization course, I framed Catan settlement placement as a dynamic programming problem. The solver evaluates resource probability distributions across board configurations and uses branch pruning to keep it fast — finding placements that maximize expected resource diversity under the constraint that your opponent is also playing optimally.",
+    "url": "https://github.com/ericchristenson1/CatanPlacement"
   },
   {
     "title": "Optimization Practice",
     "year": 2025,
     "image": "/images/optimization.svg",
     "description": "A repository for practicing mathematical and computational optimization techniques, including algorithms and methods applied to real-world problems.",
-    "story": "A personal sandbox for working through optimization problems in Python and Gurobi, built alongside MIT's Optimization coursework. Problems range from linear and integer programming to more applied formulations — a place to keep implementations and notes from the coursework that most directly connects to my work in energy markets."
+    "story": "A personal sandbox for working through optimization problems in Python and Gurobi, built alongside MIT's Optimization coursework. Problems range from linear and integer programming to more applied formulations — a place to keep implementations and notes from the coursework that most directly connects to my work in energy markets.",
+    "url": "https://github.com/ericchristenson1/optimization"
   }
 ]
