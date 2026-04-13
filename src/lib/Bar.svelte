@@ -37,8 +37,6 @@ $: maxBar = d3.greatest(data, d => d.value);
 
 </script>
 
-
-Hello from Bar.svelte 
 <div class="container">
 <svg viewBox="0 0 {width} {height}">
     <text

@@ -8,28 +8,26 @@
 
     let githubData = null;
     let loading = true;
-    let error = null;
 
 
 
 
     onMount(async () => {
         try {
-            console.log("Page has been mounted!")
             let response = await fetch("https://api.github.com/users/ericchristenson1");
-            console.log(response);
+            if (!response.ok) throw new Error("API request failed");
             githubData = await response.json();
-            console.log(githubData);
         } catch (err) {
-            error = err;
+            // Silently fail - don't show error to user
+            githubData = null;
         }
         loading = false;
     });
 </script>
 
-<h1> Eric Christenson</h1>
+<h1>Eric Christenson</h1>
 
-<p> This is my personal website, I will upload projects of all different forms here. I am adding more text so I can understand max width</p>
+<p>Graduating MIT student with experience in energy and data science. Covering topics from optimization to AI. In my freetime I really like to glassblow and be outside.</p>
 
 <img class="profile-pic" 
     src="images/Glass1.jpeg"
@@ -38,9 +36,7 @@
 
 {#if loading}
     <p>Loading...</p>
-{:else if error}
-    <p>Something went wrong: {error.message}</p>
-{:else}
+{:else if githubData}
     <div class="github-stats">
     <div class="github-header">
         <h3>GitHub Stats</h3>

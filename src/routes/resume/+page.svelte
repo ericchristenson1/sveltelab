@@ -153,8 +153,8 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--accent-color, #000000);
-    border-bottom: 2px solid var(--accent-color, #ddd);
+    color: var(--color-accent, #000000);
+    border-bottom: 2px solid var(--color-accent, #ddd);
     padding-bottom: 0.4rem;
     margin-bottom: 1.2rem;
   }

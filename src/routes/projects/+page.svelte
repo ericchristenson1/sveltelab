@@ -1,7 +1,6 @@
 <script>
   import projects from "$lib/projects.json";
   import Project from "$lib/Project.svelte";
-  import ProjectNarrative from "$lib/ProjectNarrative.svelte";
   import Scrolly from "svelte-scrolly";
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
